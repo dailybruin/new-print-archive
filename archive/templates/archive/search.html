@@ -1,0 +1,12 @@
+{% extends 'archive/index.html' %}
+
+{% block content %}
+<h4>Results</h4>
+<ul>
+  {% for result in results %}
+  <li>
+    <a href="{{ result.direct_link }}">{{ result.direct_link }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
