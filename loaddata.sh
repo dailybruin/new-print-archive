@@ -6,8 +6,8 @@ echo Dropping the database. Type \'dbarchive\' to confirm:
 read CONF
 if [ $CONF == 'dbarchive' ]; then
   echo Downloading database dump...
-  wget https://dl.dropboxusercontent.com/u/5793683/archive_data_dump
-  mv archive_data_dump ./archive/fixtures/archive_data_dump.json
+  wget https://dl.dropboxusercontent.com/u/5793683/archive_data_dump.json.zip
+  mv archive_data_dump.json.zip ./archive/fixtures/archive_data_dump.json.zip
   echo Dropping database...
   python manage.py flush
   echo Loading database...

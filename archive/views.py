@@ -15,7 +15,20 @@ def search(request):
     results = ArchivePage.objects.filter(tsv=query)[:10]
     #This is really really slow :(
     #results = ArchivePage.objects.annotate(rank=SearchRank(F('tsv'), q)).order_by('-rank')[:10]
-    print(results.query)
+    #print(results.query)
+    context = {
+        'results': results
+    }
+    return render(request, 'archive/search.html', context)
+
+def slow_search(request):
+    query = request.GET.get('search_text')
+    #vector = SearchVector('tsv')
+    q = SearchQuery(query, config='english')
+    #results = ArchivePage.objects.filter(tsv=query)[:10]
+    #This is really really slow :(
+    results = ArchivePage.objects.annotate(rank=SearchRank(F('tsv'), q)).order_by('-rank')[:10]
+    #print(results.query)
     context = {
         'results': results
     }
