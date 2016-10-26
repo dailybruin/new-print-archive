@@ -13,6 +13,6 @@ if [ $CONF == 'dbarchive' ]; then
   echo Loading database...
   python manage.py loaddata archive_data_dump
   echo Cleaning up...
-  rm ./archive/fixtures/fixtures/archive_data_dump.json
+  rm ./archive/fixtures/archive_data_dump.json
 fi
   exit
