@@ -3,10 +3,7 @@ UCLA's online print archive.
 Goals
 Update the UI to something simple and beautiful! 
 
-Search by date - This should show the issue published on whatever date the user submitted. 
-	Inputting the date should be done by some interactive module ((calendar maybe?)). This module should clearly show
-	what dates are currently available to view. This page should also link to the print archive helper site, which will
-	allow the user to help manually input dates. 
+Search by date - This should show the issue published on whatever date the user submitted. Inputting the date should be done by some interactive module ((calendar maybe?)). This module should clearly show what dates are currently available to view. This page should also link to the print archive helper site, which will allow the user to help manually input dates. 
 
 Search by text - This will return pages in the database with text that matches the query.
 
