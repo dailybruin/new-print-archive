@@ -59,15 +59,17 @@ class Reel:
         if not img_fname.endswith('.pdf'):
             return
         if os.path.exists(img_path+'.jpg'):
-            print "%s exists! Skipping..." % img_path
+            print "%s.jpg exists! Skipping..." % img_path
             return
         pdf_pages = Image(filename=img_path, resolution=144)
         page = pdf_pages.sequence[0]
         with Image(page) as i:
             i.format = 'jpg'
-            i.crop(width=i.width, height=int(0.3*i.height), gravity="north")
             i.save(filename=img_path+'.jpg')
+            i.crop(width=i.width, height=int(0.25*i.height), gravity="north")
+            i.save(filename=img_path+'.header.jpg')
             print "Converted image %s! Uploading to Gdrive..." % img_path
+            gdrive.upload(img_path+'.header.jpg', img_fname+'.header.jpg', folder_id)
             gdrive.upload(img_path+'.jpg', img_fname+'.jpg', folder_id)
             gdrive.upload(img_path, img_fname, folder_id)
 
