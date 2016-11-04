@@ -1,0 +1,21 @@
+div#thumbnail{
+    background-color:orange;
+    height:calc(100vh - 50px);
+    margin-top:50px;
+}
+div#thumbnail .toggle .glyphicon{
+    font-size:2.5em;
+    margin-top:10px;
+}
+
+div#viewer {
+    height:calc(100vh - 50px);
+    margin-top:50px;
+    margin-bottom:-20px;
+    width:calc(100%+ 60px);
+    overflow-y:hidden;
+}
+
+body {
+  background: #eeeeee;
+}

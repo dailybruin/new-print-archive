@@ -1,0 +1,16 @@
+UCLA's online print archive. 
+
+Goals
+Update the UI to something simple and beautiful! 
+
+Search by date - This should show the issue published on whatever date the user submitted. Inputting the date should be done by some interactive module ((calendar maybe?)). This module should clearly show what dates are currently available to view. This page should also link to the print archive helper site, which will allow the user to help manually input dates. 
+
+Search by text - This will return pages in the database with text that matches the query.
+
+All pdfs are stored in Google Drive.
+
+TWO MAIN PDF TYPES:
+1915-2002: Microfilm reels. This reels need to be split and placed on the Daily Bruin Google Drive.
+2003-Now: These are stored on the Daily Bruin Google Drive in a directory like 2003/12-December/120103
+
+

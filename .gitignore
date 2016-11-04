@@ -1,0 +1,10 @@
+venv
+*.pyc
+staticfiles
+.env
+db.sqlite3
+.tmp
+scripts/.tmp
+scripts/*.json
+scripts/*.txt
+scripts/settings.yaml

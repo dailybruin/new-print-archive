@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Daily Bruin | Archive</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700italic,400italic,300italic,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.css">
+
+    <link href="static/css/timeline.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+
+</head>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header pull-left">
+          <a class="navbar-brand" href="#"><img id="logo-img" src="static/images/db_logo.svg"></a>
+      </div>
+
+      <div class="navbar-header pull-right">
+        <a role="button" data-placement="bottom" data-toggle="popover" class="btn btn-link navbar-btn" id="searchBtn"><i class="fa fa-search"></i></a>
+        <div id="searchMenu" class="hidden">
+          <div class="popoverSearchForm col-md-12">
+            <form id="search-field">
+              <div class="row">
+                <div class="input-group">
+                  <span class="input-group-addon">Search</span>
+                  <input type="text" class="form-control" placeholder="John Wooden" id="search-text"/>
+                  <!--<input type="text" class="form-control" placeholder="2015" id="search-year"/>-->
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="search-start-date" placeholder="09/10/1915" name="start"/>
+                  <span class="input-group-addon">To</span>
+                  <input type="text" class="form-control" id="search-end-date" name="end"/>
+                </div>
+              </div>
+              <div class="row">
+                <button class="btn btn-block btn-primary search-submit" type="submit">Go</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-link navbar-btn">Print Archive</button>
+      </div>
+    </nav>
+
+
+    <div class="header text-center">
+        <div class="intro container-fluid">
+            <h1>
+                <span id="logo">Daily Bruin</span>
+                <span id="divider">|</span>
+                <span id="archive">Print Archive</span>
+            </h1>
+            <h4 style="margin-bottom:20px">Since 1915</h4>
+            <div class="intro-form">
+              <form>
+                <div class="row">
+                  <div class="col-xs-6 intro-form-label">
+                    <em>Browse by Date</em>
+                  </div>
+                  <div class="col-sm-5 col-xs-6">
+                      <div class="form-group">
+                        <input type="text" value="09/10/1915" id="intro-form-date" class="form-control"/>
+                      </div>
+                  </div>
+                  <div class="col-sm-1 col-xs-6">
+                    <a href="#" id="intro-search-date">Go</a>
+                  </div>
+                </div>
+                <div class="row">
+                  <em>or</em>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6 intro-form-label">
+                    <em>Search by Text</em>
+                    <h5>After 2003</h5>
+                  </div>
+                  <div class="col-sm-5 col-xs-6">
+                    <form>
+                      <div class="form-group">
+                        <input type="text" value="John Wooden" id="intro-form-text" class="form-control"/>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-sm-1 col-xs-6">
+                    <a href="#" id="intro-search-text">Go</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="static/js/WebArchive.js"></script>
+    <script type="text/javascript" src="static/js/Nav.js"></script>
+    <script type="text/javascript" src="static/js/script.js"></script>
+    <script type="text/javascript" src="static/js/search.js"></script>
+</body>
+</html>
+
+
+<h4>Search</h4>
+<form action="/search/" method="get">
+    <label for="search_text">Search: </label>
+    <input id="search_text" type="text" name="search_text">
+    <input type="submit" value="OK">
+</form>
+
+<h4>(Slow) Search</h4>
+<form action="/slow_search/" method="get">
+    <label for="search_text">Search: </label>
+    <input id="search_text" type="text" name="search_text">
+    <input type="submit" value="OK">
+</form>
+{% block content %}
+{% endblock %}
