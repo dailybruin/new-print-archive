@@ -38,12 +38,18 @@ function loadHeader() {
                   },900,function(){
                       $('.intro .intro-form').css('opacity',1);
                       $('.intro h4').css('opacity',1);
+                      $('.about').css('opacity',.9);
+                      $('#calendar-img').css('opacity', 1);
                   });
               },500);
           });
       },500);
   });
 }
+
+// function scrollToMainPage() {
+//   $('#go-to-mainpage').
+// }
 
 $(function() {
   main();
