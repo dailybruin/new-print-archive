@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.postgres',
+    'haystack',
     'archive',
 ]
 
@@ -125,3 +126,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+# Elasticsearch
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'http://127.0.0.1:9201/',
+        'INDEX_NAME': 'printarchive',
+    }
+}
+
+ELASTIC_CONFIG = {
+    'URL': '127.0.0.1:9201',
+    'INDEX_NAME': 'printarchive',
+}

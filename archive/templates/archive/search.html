@@ -1,12 +1,27 @@
-{% extends 'archive/index.html' %}
+{#% extends 'archive/index.html' %#}
+
+<h4>Search</h4>
+<form action="/search/" method="get">
+    <label for="search_text">Search: </label>
+    <input id="search_text" type="text" name="search_text">
+    <input type="submit" value="OK">
+</form>
+
+<h4>(Slow) Search</h4>
+<form action="/slow_search/" method="get">
+    <label for="search_text">Search: </label>
+    <input id="search_text" type="text" name="search_text">
+    <input type="submit" value="OK">
+</form>
 
 {% block content %}
 <h4>Results</h4>
 <ul>
-  {% for result in results %}
+  {{ results }}
+  <!--{% for result in results %}
   <li>
     <a href="{{ result.direct_link }}">{{ result.direct_link }}</a>
   </li>
-  {% endfor %}
+  {% endfor %}-->
 </ul>
 {% endblock %}

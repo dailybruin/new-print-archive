@@ -31,9 +31,5 @@ class Migration(migrations.Migration):
                 'managed': True,
                 'db_table': 'archive',
             },
-        ),
-        migrations.RunSQL(("CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE "
-                            "ON archive FOR EACH ROW EXECUTE PROCEDURE "
-                            "tsvector_update_trigger(tsv, 'pg_catalog.english', text);")),
-        migrations.RunSQL("CREATE INDEX text_index ON archive USING GIN (tsv);")
+        )
     ]

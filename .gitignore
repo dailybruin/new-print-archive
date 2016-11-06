@@ -8,3 +8,4 @@ scripts/.tmp
 scripts/*.json
 scripts/*.txt
 scripts/settings.yaml
+archive/fixtures/*
