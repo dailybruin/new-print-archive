@@ -48,6 +48,15 @@ function setUpNavBar() {
 
   $searchBtn.on('shown.bs.popover', bindSearchFormHandlers);
 }
+// OVERLAYSTUFF
+$('.pick-date').click(function(){
+		if ($(".pick-date").hasClass("open")) {
+			$(".menu-overlay").fadeOut(200);
+		} else {
+			$(".menu-overlay").fadeIn(200);
+		}
+		$(this).toggleClass('open');
+	});
 
 $(function(){
   setUpNavBar();
