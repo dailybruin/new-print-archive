@@ -203,3 +203,46 @@ body {
   border-top-color: #3496E1;
   border-left-color: #3496E1;
 }
+
+
+/*OVERLAY STUFF*/
+.menu-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.8);
+	top: 0;
+	left: 0;
+  right: 0;
+  bottom:0;
+	z-index: 20;
+	display: none;
+}
+.overlay-content {
+  height: 100%;
+  overflow: scroll;
+}
+
+.menu-overlay ul {
+	text-align: center;
+	font-size: 30px;
+  font-family: 'EB Garamond', serif;
+	position: relative;
+	top: 10%;
+}
+
+.menu-overlay li {
+	margin: 0 auto;
+	list-style-type: none;
+}
+
+.menu-overlay li:hover {
+	cursor: pointer;
+	color: #23527C;
+}
+
+/*TODO: can still scroll in the back. is this wanted?*/
+.background-content{
+    height: 100%;
+    overflow: auto;
+}
