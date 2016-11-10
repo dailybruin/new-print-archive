@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Droid+Serif|EB+Garamond|Lato:300,400,400i,700,700i|Playfair+Display:400,400i,700,700i');
-
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Lato:300,400,400i,700,700i|Playfair+Display:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700');
 
 body, div { font-family:"Lato",Helvetica,sans-serif; }
 
@@ -8,14 +8,27 @@ body {
   height: 100%;
 }
 
+/*.bottom-blue{
+  position:absolute;
+  bottom:0;
+  width: 100%;
+  height: 50px;
+  background-color: #3496E1;
+}*/
+
 .navbar{
     /*background-color:#333;border-color:#333;*/
-    background-color:#3496E1;
-    border-color:#3496E1;
+    /*background-color:#3496E1;
+    border-color:#3496E1;*/
+    height: 50px;
 }
 
 .navbar-default .navbar-brand {
   color: #d3d3d3;
+}
+
+.navbar-default{
+  background-color: #fff;
 }
 
 .navbar-default .navbar-header > .navbar-btn {
@@ -39,15 +52,16 @@ body {
 }
 
 .header{
-    background-color:#3496E1;
-    color:white;
+    /*background-color:#3496E1;*/
+    /*color:white;*/
+    color: #000;
     height:100vh;
     display: flex;
     justify-content: center;
 }
 
 .header #logo, .header #divider{font-size:2em;}
-.header #logo{font-family: 'Droid Serif', serif; text-transform:uppercase;}
+.header #logo{font-family: 'Libre Baskerville', serif; text-transform:uppercase;}
 .header #archive{font-size:.75em;}
 .header .btn{position:relative; margin-top:30px; padding:10px 30px 10px 30px;z-index:5;}
 .intro h1 span {display:none;}
@@ -75,6 +89,7 @@ body {
 .intro .intro-form, .intro h4, .about, #calendar-img {
   opacity: 0;
   transition: opacity 700ms linear;
+  color: black;
 }
 
 #divider, #archive{opacity:0;display:inline-block;}
@@ -86,7 +101,7 @@ body {
 
 .intro-form div{
   font-size: 1.4em;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   color: #ffffff;
 }
 
@@ -116,7 +131,7 @@ body {
   box-shadow: none;
   color: #ffffff;
   font-size: 24px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
 }
 
