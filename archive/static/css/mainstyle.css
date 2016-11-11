@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Lato:300,400,400i,700,700i|Playfair+Display:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700');
+
+body, div { font-family:"Lato",Helvetica,sans-serif; }
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.search-body{
+  position:relative;
+  top: 80px;
+}
+
+.navbar{
+  background-color: #fff;
+  height: 50px;
+}
+
+
+.navbar-default .navbar-brand {
+  color: #d3d3d3;
+}
+
+
+.navbar-default .navbar-header > .navbar-btn {
+  color: #d3d3d3;
+  font-size: 16px;
+  text-decoration: none;
+  outline: none;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-default .navbar-header > .navbar-btn:hover,
+.navbar-default .navbar-header > .navbar-btn:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+
+.btn-primary {
+  background-color: #3496E1;
+  border-color: #5E82A2;
+}
+
+.header{
+    /*background-color:#3496E1;*/
+    /*color:white;*/
+    color: #000;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.header #logo, .header #divider{font-size:2em;}
+.header #logo{font-family: 'Libre Baskerville', serif; text-transform:uppercase;}
+.header #archive{font-size:.75em;}
+.header .btn{position:relative; margin-top:30px; padding:10px 30px 10px 30px;z-index:5;}
+.intro h1 span {display:none;}
+.container-fluid{
+  margin-top: 5%;
+}
+
+.about{
+  width: 75%;
+  margin: 40px auto;
+  background-color: #fff;
+  padding:10px;
+
+}
+
+.about p{
+  font-size: 1.8em;
+  line-height: 2;
+  /*letter-spacing: 1px;*/
+  color: #000;
+  font-family: 'EB Garamond', serif;
+  /*opacity: 0;*/
+}
+
+
+#divider, #archive{opacity:0;display:inline-block;}
+#divider{top:-100px;position:relative}
+#start{margin:5vh;}
+#time-navigation{display:none;}
+.wrapper{margin-bottom:50px; display:none;}
+/*.form-control{border:1px solid white; }*/
+
+.intro-form div{
+  font-size: 1.4em;
+  font-family: 'Cormorant Garamond', serif;
+  color: #ffffff;
+}
+
+.intro-form a{
+  font-size: 0.8em;
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+}
+
+
+.intro-form .intro-form-label {
+  text-align: right;
+}
+
+.intro-form .intro-form-label h5 {
+  margin-top: 0;
+}
+
+.intro-form form input,
+.intro-form form input:focus{
+  border: 0;
+  border-bottom: 2px solid #ffffff;
+  border-color: #ffffff;
+  border-radius: 0;
+  background-color: transparent;
+  text-align: left;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+.popover {
+  margin-right: 1em;
+}
+
+#search-field .row{
+  margin-bottom: 0.5em;
+}
+
+
+#search{display:none; padding:1%;}
+.page-header{margin-top:110px;}
+
+
+  #BRcontainer{
+      top:-24px;
+      background-color:white;
+  }
+  #BRpageview{
+      background-color:white;
+  }
+
+  /*Styling for 2003 + search results*/
+.container {
+    margin-top: 2em;
+}
+
+#logo-img {
+  max-height: 120%;
+  max-width: 120%;
+}
+
+#calendar-img{
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+
+#calendar-img:hover{
+  cursor: pointer;
+  opacity: 1;
+}
+
+#results {
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.res-box {
+    margin-bottom: 2em;
+    justify-content: center;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.res-thumbnail {
+    box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.56);
+}
+
+#search-preview{
+    background-color:#2c3e50;
+    height:calc(100vh - 69px);
+    overflow-y:scroll;
+}
+
+
+
+/*OVERLAY STUFF*/
+.menu-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.8);
+	top: 0;
+	left: 0;
+  right: 0;
+  bottom:0;
+	z-index: 20;
+	display: none;
+}
+.overlay-content {
+  height: 100%;
+  overflow: scroll;
+}
+
+.menu-overlay ul {
+	text-align: center;
+	font-size: 30px;
+  font-family: 'EB Garamond', serif;
+	position: relative;
+	top: 10%;
+}
+
+.menu-overlay li {
+	margin: 0 auto;
+	list-style-type: none;
+}
+
+.menu-overlay li:hover {
+	cursor: pointer;
+	color: #23527C;
+}
+
+/*TODO: can still scroll in the back. is this wanted?*/
+.background-content{
+    height: 100%;
+    overflow: auto;
+}
