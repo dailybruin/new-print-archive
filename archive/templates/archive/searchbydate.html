@@ -1,0 +1,79 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Daily Bruin | Archive</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker3.css">
+
+    <link href="{% static '/css/mainstyle.css' %}" rel="stylesheet">
+
+
+</head>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="navbar-header pull-right">
+          <a class="navbar-brand" href="http://www.dailybruin.com" target="_blank"><img id="logo-img" src="{% static 'images/db_logo_blue.svg' %}"></a>
+      </div>
+      <div class="navbar-header pull-left">
+        <a class="pick-date" href="javascript:void(0)"><img id="calendar-img" src="{% static 'images/calendarblack.svg' %}"></a>
+      </div>
+    </nav>
+
+
+    <div class="menu-overlay" >
+      <div class="overlay-content">
+        <ul>
+      		<a href="search"><li>2010</li></a>
+      		<a href="#"><li>2000</li></a>
+      		<a href="#"><li>1990</li></a>
+          <a href="#"><li>1980</li></a>
+      		<a href="#"><li>1970</li></a>
+      		<a href="#"><li>1960</li></a>
+          <a href="#"><li>1950</li></a>
+          <a href="#"><li>1940</li></a>
+      		<a href="#"><li>1930</li></a>
+      		<a href="#"><li>1920</li></a>
+          <a href="#"><li>1910</li></a>
+          <a href="#"><li>1900</li></a>
+          <a href="#"><li>FILLER</li></a>
+          <a href="#"><li>FILLER</li></a>
+          <a href="#"><li>FILLER</li></a>
+          <a href="#"><li>FILLER</li></a>
+          <a href="#"><li>FILLER</li></a>
+          <a href="#"><li>FILLER</li></a>
+      	</ul>
+      </div>
+    </div>
+<!-- Body -->
+
+
+<!-- End Body -->
+
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="{% static '/js/nav.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/mainscript.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/search.js' %}"></script>
+</body>
+</html>
+
+
+<!-- <h4>Search</h4>
+<form action="/search/" method="get">
+    <label for="search_text">Search: </label>
+    <input id="search_text" type="text" name="search_text">
+    <input type="submit" value="OK">
+</form>
+
+<h4>(Slow) Search</h4>
+<form action="/slow_search/" method="get">
+    <label for="search_text">Search: </label>
+    <input id="search_text" type="text" name="search_text">
+    <input type="submit" value="OK">
+</form>
