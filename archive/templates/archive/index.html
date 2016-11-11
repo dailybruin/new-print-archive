@@ -29,7 +29,7 @@
     <div class="menu-overlay" >
       <div class="overlay-content">
         <ul>
-      		<a href="#"><li>2010</li></a>
+      		<a href="search"><li>2010</li></a>
       		<a href="#"><li>2000</li></a>
       		<a href="#"><li>1990</li></a>
           <a href="#"><li>1980</li></a>
@@ -50,8 +50,12 @@
       	</ul>
       </div>
     </div>
+<!-- Body -->
+
+{% block content %}
 <div class = "background-content">
   <div class="header text-center">
+
       <div class="intro container-fluid">
           <h1>
               <span id="logo">Daily Bruin</span>
@@ -65,22 +69,18 @@
             Bound archives of the Daily Bruin are also available upon request. Please call (310) 825-9898 to schedule an appointment to access the bound archives.</p>
           </div>
       </div>
-      <div class="bottom-blue">
-
-      </div>
   </div>
-<!--   <div id="main-page">
-    <p>hi</p>
-  </div> -->
 </div>
+
+{% endblock %}
+<!-- End Body -->
 
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.js"></script>
-    <script type="text/javascript" src="static/js/WebArchive.js"></script>
-    <script type="text/javascript" src="static/js/Nav.js"></script>
-    <script type="text/javascript" src="static/js/script.js"></script>
-    <script type="text/javascript" src="static/js/search.js"></script>
+    <script type="text/javascript" src="{% static '/js/nav.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/landingscript.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/search.js' %}"></script>
 </body>
 </html>
 
@@ -98,5 +98,3 @@
     <input id="search_text" type="text" name="search_text">
     <input type="submit" value="OK">
 </form>
-{% block content %}
-{% endblock %} -->

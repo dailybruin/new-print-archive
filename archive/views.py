@@ -8,6 +8,9 @@ from .models import ArchivePage
 def index(request):
     return render(request, 'archive/index.html')
 
+def searchbydate(request):
+    return render(request, 'archive/searchbydate.html')
+
 def search(request):
     query = request.GET.get('search_text')
     #vector = SearchVector('tsv')
