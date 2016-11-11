@@ -4,11 +4,13 @@ from django.db.models import F
 
 from .models import ArchivePage
 
-# Create your views here.
+
 def index(request):
     return render(request, 'archive/index.html')
 
+# Called when user clicks on a date
 def searchbydate(request):
+    #need to search google drive for jpgs in selected date folder
     return render(request, 'archive/searchbydate.html')
 
 def search(request):
