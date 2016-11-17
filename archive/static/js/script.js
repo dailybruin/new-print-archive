@@ -23,6 +23,10 @@ function main() {
 
 }
 
+function getDate(){
+  
+}
+
 function loadHeader() {
   $('#logo').fadeIn(1000, function(){
       //wait for .7 second before fading in "print archive"

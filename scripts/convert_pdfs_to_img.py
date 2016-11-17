@@ -66,7 +66,7 @@ class Reel:
         with Image(page) as i:
             i.format = 'jpg'
             i.save(filename=img_path+'.jpg')
-            i.crop(width=i.width, height=int(0.25*i.height), gravity="north")
+            i.crop(width=i.width, height=int(0.30*i.height), gravity="north")
             i.save(filename=img_path+'.header.jpg')
             print "Converted image %s! Uploading to Gdrive..." % img_path
             gdrive.upload(img_path+'.header.jpg', img_fname+'.header.jpg', folder_id)

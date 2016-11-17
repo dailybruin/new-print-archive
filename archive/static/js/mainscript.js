@@ -5,7 +5,6 @@ function main() {
 }
 
 
-
 $(function() {
   main();
 });

@@ -27,9 +27,10 @@
     </nav>
 
     <div class="menu-overlay" >
-      <div class="overlay-content">
+      <div class="overlay-content" id = "overlay">
+       
         <ul>
-      		<a href="search"><li>2010</li></a>
+      		<a class="decade"><li>2010</li></a>
       		<a href="#"><li>2000</li></a>
       		<a href="#"><li>1990</li></a>
           <a href="#"><li>1980</li></a>
@@ -41,12 +42,6 @@
       		<a href="#"><li>1920</li></a>
           <a href="#"><li>1910</li></a>
           <a href="#"><li>1900</li></a>
-          <a href="#"><li>FILLER</li></a>
-          <a href="#"><li>FILLER</li></a>
-          <a href="#"><li>FILLER</li></a>
-          <a href="#"><li>FILLER</li></a>
-          <a href="#"><li>FILLER</li></a>
-          <a href="#"><li>FILLER</li></a>
       	</ul>
       </div>
     </div>
@@ -80,6 +75,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="{% static '/js/nav.js' %}"></script>
     <script type="text/javascript" src="{% static '/js/landingscript.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/updateOverlay.js' %}"></script>
     <script type="text/javascript" src="{% static '/js/search.js' %}"></script>
 </body>
 </html>
