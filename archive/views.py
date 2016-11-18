@@ -38,23 +38,29 @@ def getDays(request, decade, year, month):
     thirty_days = [4,6,9,11]
     days = []
     if int(month) in thirtyone_days:
-        i=0
+        i=1
         while(i<=31):
             print ("first: ", i)
             days.append(i)
             i+=1
     elif int(month) in thirty_days:
-        i=0
+        i=1
         while(i<=30):
             print ("second: ", i)
             days.append(i)
             i+=1
     else: #feb
-        i=0
-        while(i<=28):
-            print ("feb: ", i)
-            days.append(i)
-            i+=1
+        i=1
+        if ( (int(year) % 4) == 0):
+            while(i<=29):
+                print ("feb: ", i)
+                days.append(i)
+                i+=1
+        else:
+            while(i<=28):
+                print ("feb: ", i)
+                days.append(i)
+                i+=1
 
     return render(request, 'archive/overlaydays.html', {'decade':decade, 'year':year, 'month': month, 'days': days})
 
