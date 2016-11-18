@@ -56,27 +56,39 @@ class Reel:
 
     @staticmethod
     def convert_image_and_upload(img_path, img_fname, folder_id, gdrive):
-        if not img_fname.endswith('.pdf'):
+        #if not img_fname.endswith('.pdf'):
+            #return
+        #if os.path.exists(img_path+'.jpg'):
+            #print "%s.jpg exists! Skipping..." % img_path
+            #return
+        try:
+            pdf_pages = Image(filename=img_path, resolution=144)
+            page = pdf_pages.sequence[0]
+            with Image(page) as i:
+                i.format = 'jpg'
+                i.save(filename=img_path+'.jpg')
+                i.crop(width=i.width, height=int(0.25*i.height), gravity="north")
+                i.save(filename=img_path+'.header.jpg')
+                print "Converted image %s! Uploading to Gdrive..." % img_path
+                gdrive.upload(img_path+'.header.jpg', img_fname+'.header.jpg', folder_id)
+                gdrive.upload(img_path+'.jpg', img_fname+'.jpg', folder_id)
+                gdrive.upload(img_path, img_fname, folder_id)
+        except Exception as e:
+            print e
             return
-        if os.path.exists(img_path+'.jpg'):
-            print "%s.jpg exists! Skipping..." % img_path
-            return
-        pdf_pages = Image(filename=img_path, resolution=144)
-        page = pdf_pages.sequence[0]
-        with Image(page) as i:
-            i.format = 'jpg'
-            i.save(filename=img_path+'.jpg')
-            i.crop(width=i.width, height=int(0.30*i.height), gravity="north")
-            i.save(filename=img_path+'.header.jpg')
-            print "Converted image %s! Uploading to Gdrive..." % img_path
-            gdrive.upload(img_path+'.header.jpg', img_fname+'.header.jpg', folder_id)
-            gdrive.upload(img_path+'.jpg', img_fname+'.jpg', folder_id)
-            gdrive.upload(img_path, img_fname, folder_id)
 
     def convert_images_and_upload(self):
         print "Converting images..."
         process_pool = Pool()
-        args = [(os.path.join(self.split_output_dir,f), f, self.folder_id, self.gdrive) for f in os.listdir(self.split_output_dir)]
+        args = []
+        for f in os.listdir(self.split_output_dir):
+            if not f.endswith('.pdf'):
+                continue
+            if os.path.exists(os.path.join(self.split_output_dir,f) +'.jpg'):
+                print "%s.jpg exists! Skipping..." % f
+                continue
+            args.append((os.path.join(self.split_output_dir,f), f, self.folder_id, self.gdrive))
+
         process_pool.map(call_reel_convert, args)
         #for p in :
         #    if p.endswith('.pdf'):
