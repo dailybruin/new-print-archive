@@ -72,6 +72,9 @@ $( document ).ready(function() {
         $('#replace').html(data);
         console.log("trying to change css");
         $('.menu-overlay').css("display", "none");
+
+        // change overlay back to original
+
         }
       });
     });

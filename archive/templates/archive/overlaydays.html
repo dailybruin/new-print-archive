@@ -1,6 +1,6 @@
 
-<ul>
+<ul class="list-group">
 	{% for day in days %}
-	<li class="final_date"><a class="{{ decade }} {{ year }} {{month}} ">{{day}}</a></li>
+	<li class="final_date list-group-item col-xs-12 col-sm-12 col-lg-2"><a class="{{ decade }} {{ year }} {{month}} ">{{day}}</a></li>
 	{% endfor %}
 </ul>
