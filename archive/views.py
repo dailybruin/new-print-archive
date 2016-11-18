@@ -33,26 +33,34 @@ def getMonths(request, decade,year):
     return render(request, 'archive/overlaymonths.html', {'decade':decade, 'year':year} )
 
 def getDays(request, decade, year, month):
-    print (decade, year, month)
+    print ("decade: ", decade, "month: ", month, "year: ", month)
     thirtyone_days = [1,3,5,7,8,10,12]
     thirty_days = [4,6,9,11]
     days = []
-    if month in thirtyone_days:
+    if int(month) in thirtyone_days:
         i=0
         while(i<=31):
+            print ("first: ", i)
             days.append(i)
-    elif month in thirty_days:
+            i+=1
+    elif int(month) in thirty_days:
         i=0
         while(i<=30):
+            print ("second: ", i)
             days.append(i)
+            i+=1
     else: #feb
         i=0
         while(i<=28):
+            print ("feb: ", i)
             days.append(i)
-
-    print (days)
+            i+=1
 
     return render(request, 'archive/overlaydays.html', {'decade':decade, 'year':year, 'month': month, 'days': days})
+
+def showContent(request, decade, year, month, day):
+    print ("decade: ", decade, "month: ", month, "year: ", month, "day: ", day)
+    return render(request, 'archive/maincontent.html', {'decade':decade, 'year':year, 'month': month, 'days': day})
 
 # Called when user clicks on a date
 def searchbydate(request):

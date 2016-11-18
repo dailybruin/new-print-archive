@@ -34,11 +34,13 @@ $( document ).ready(function() {
 
     // update month to day
     $(document).on("click",".day a", function() {
-      console.log($(this));
+      console.log("clicked month" , $(this));
 
       decade = $(this)[0].classList[0];
       year = $(this)[0].classList[1];
       month = $(this)[0].id;
+
+      console.log("decade: ", decade, "month: ", month, "year: ", year);
   
       date_url = "/overlay/" + decade + "/" + year + "/" + month;
         $.ajax({
@@ -50,5 +52,27 @@ $( document ).ready(function() {
       });
     });
     // end update month to day
+
+    // go to main page
+    $(document).on("click",".final_date a", function() {
+      console.log("clicked day" , $(this));
+
+      decade = $(this)[0].classList[0];
+      year = $(this)[0].classList[1];
+      month = $(this)[0].classList[2];
+      day = $(this)[0].innerText;
+
+      console.log("decade: ", decade, "month: ", month, "year: ", year, "day: ", day);
+  
+      date_url = "/overlay/" + decade + "/" + year + "/" + month + "/" + day;
+        $.ajax({
+        url: date_url,
+        success: function(data) {
+          console.log("success: ", data);
+        $('#replace').html(data);
+        }
+      });
+    });
+    // end go to main page
 
 });

@@ -257,3 +257,32 @@ body {
     height: 100%;
     overflow: auto;
 }
+
+
+/* CSS FOR MAIN CONTENT START */
+
+.maincontent{
+  margin-top: 50px;
+}
+
+.maincontent p{
+  font-size: 30px;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
