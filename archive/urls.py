@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
+    url(r'^originaloverlay/$', views.loadOriginalOverlay),
     url(r'^search/', views.search),
     url(r'^slow_search/', views.slow_search),
     url(r'^overlay/(?P<decade>[0-9]{4})/$', views.getYear),    

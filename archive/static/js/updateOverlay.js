@@ -70,11 +70,16 @@ $( document ).ready(function() {
         success: function(data) {
           console.log("success: ", data);
         $('#replace').html(data);
-        console.log("trying to change css");
         $('.menu-overlay').css("display", "none");
 
         // change overlay back to original
+        }
+      });
 
+      $.ajax({
+        url: "/originaloverlay/",
+        success: function(data) {
+        $('#overlay').html(data);
         }
       });
     });

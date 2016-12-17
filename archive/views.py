@@ -6,8 +6,11 @@ from .models import ArchivePage
 
 
 def index(request):
-
     return render(request, 'archive/index.html')
+
+def loadOriginalOverlay(request):
+    print ("it work")
+    return render(request, 'archive/originaloverlay.html')
 
 def getYear(request, decade):
      
@@ -65,8 +68,8 @@ def getDays(request, decade, year, month):
     return render(request, 'archive/overlaydays.html', {'decade':decade, 'year':year, 'month': month, 'days': days})
 
 def showContent(request, decade, year, month, day):
-    print ("decade: ", decade, "month: ", month, "year: ", month, "day: ", day)
-    return render(request, 'archive/maincontent.html', {'decade':decade, 'year':year, 'month': month, 'days': day})
+
+    return render(request, 'archive/maincontent.html', {'decade':decade, 'year':year, 'month': month, 'day': day})
 
 # Called when user clicks on a date
 def searchbydate(request):
