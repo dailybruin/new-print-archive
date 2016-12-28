@@ -1,7 +1,28 @@
+// Stack for keeping track of the 'pages' selected, for back button navigation.
+var history_stack = new Array();
+history_stack.push("/originaloverlay/");
 
 $( document ).ready(function() {
 
+  // Back Button
+  $(document).on("click", ".backbutton", function() {
+    console.log($(this));
+    history_stack.pop(); // Get rid of current url
+    var backurl = history_stack.pop();  // Get rid of prev url, save it
+    //alert("going to" + backurl);
+      $.ajax({
+      url: backurl,
+      success: function(data) {
+        history_stack.push(backurl);
+        console.log("success: ", data);
+      $('#overlay').html(data);
+      }
+    });
+  });
+  // End Back Button
+
     // update from century to decade
+    //DECADE TO YEAR??
     $(document).on("click", ".decade a", function() {
       console.log($(this));
       century = $(this)[0].innerText;
@@ -10,6 +31,8 @@ $( document ).ready(function() {
         url: date_url,
         success: function(data) {
           console.log("success: ", data);
+          history_stack.push(date_url);
+          alert("pushed " + date_url);
         $('#overlay').html(data);
         }
       });
@@ -26,6 +49,8 @@ $( document ).ready(function() {
         url: date_url,
         success: function(data) {
           console.log("success: ", data);
+          history_stack.push(date_url);
+          alert("pushed " + date_url);
         $('#overlay').html(data);
         }
       });
@@ -41,12 +66,13 @@ $( document ).ready(function() {
       month = $(this)[0].id;
 
       console.log("decade: ", decade, "month: ", month, "year: ", year);
-  
+
       date_url = "/overlay/" + decade + "/" + year + "/" + month;
         $.ajax({
         url: date_url,
         success: function(data) {
           console.log("success: ", data);
+          history_stack.push(date_url);
         $('#overlay').html(data);
         }
       });
@@ -63,12 +89,13 @@ $( document ).ready(function() {
       day = $(this)[0].innerText;
 
       console.log("decade: ", decade, "month: ", month, "year: ", year, "day: ", day);
-  
+
       date_url = "/overlay/" + decade + "/" + year + "/" + month + "/" + day;
         $.ajax({
         url: date_url,
         success: function(data) {
           console.log("success: ", data);
+          history_stack.push(date_url);
         $('#replace').html(data);
         $('.menu-overlay').css("display", "none");
 
