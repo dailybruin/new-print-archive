@@ -268,12 +268,19 @@ body {
 .selected_date{
   padding-top: 50px;
 }
-.selected_date p.selected_year{
+.selected_date p.selected_year {
     text-align: center;
     color: #60baff; /* change color later*/
     font-family: "Lato", Arial, sans-serif;
     font-weight: 700;
     font-size: 3.8em;
+}
+
+p.select-instruction{
+   text-align: center;
+   color: #3496E1;
+   font-size: 30px;
+
 }
 
 /*TODO: can still scroll in the back. is this wanted?*/
@@ -293,20 +300,3 @@ body {
   font-size: 30px;
   color: black;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

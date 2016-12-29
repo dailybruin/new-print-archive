@@ -9,7 +9,6 @@ $( document ).ready(function() {
     console.log($(this));
     history_stack.pop(); // Get rid of current url
     var backurl = history_stack.pop();  // Get rid of prev url, save it
-    //alert("going to" + backurl);
       $.ajax({
       url: backurl,
       success: function(data) {
@@ -32,7 +31,6 @@ $( document ).ready(function() {
         success: function(data) {
           console.log("success: ", data);
           history_stack.push(date_url);
-          alert("pushed " + date_url);
         $('#overlay').html(data);
         }
       });
@@ -50,7 +48,6 @@ $( document ).ready(function() {
         success: function(data) {
           console.log("success: ", data);
           history_stack.push(date_url);
-          alert("pushed " + date_url);
         $('#overlay').html(data);
         }
       });
