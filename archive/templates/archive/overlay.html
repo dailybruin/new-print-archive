@@ -1,8 +1,10 @@
-<div class="selected_date"></div>
-<input class="backbutton" type="button" value="BACK BUTTON" />
+<div class="selected_date">
+<a class="backbutton" href="javascript:void(0)"><img id="back-img" src="../../static/images/back-left-arrow-circular-button.svg"></a>
+<p class="selected_year"> The {{ decade }}'s</p>
 <p class="select-instruction">
 	Select issue year:
 </p>
+</div>
 <ul class="list-group" >
 	{% for returned_year in returned_years %}
 	<li class="month list-group-item col-xs-12 col-sm-6 col-lg-6"><a class="{{ decade }}">{{ returned_year }}</a></li>

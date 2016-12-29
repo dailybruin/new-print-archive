@@ -176,6 +176,19 @@ body {
   opacity: 1;
 }
 
+#back-img{
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 60px;
+  left: 50px;
+}
+
+#back-img:hover{
+  cursor: pointer;
+  opacity: 0.5;
+}
+
 #results {
     margin-top: 2em;
     display: flex;
