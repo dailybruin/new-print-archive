@@ -11,6 +11,6 @@ urlpatterns = [
     url(r'^overlay/(?P<decade>[0-9]{4})/(?P<year>[0-9]{4})$', views.getMonths),
     url(r'^overlay/(?P<decade>[0-9]{4})/(?P<year>[0-9]{4})/(?P<month>[1-9]{1}|10|11|12)/$', views.getDays),
     # url(r'^overlay/(?P<decade>[0-9]{4})/(?P<year>[0-9]{4})/(?P<month>[1-9]{1}|10|11|12)/(?P<day>(1|2|3)?[0-9]{1})/$', views.showContent),
-    url(r'^overlay/(?P<decade>[0-9]{4})/(?P<year>[0-9]{4})/(?P<month>[1-9]{1}|10|11|12)/(?P<day>\d)/$', views.showContent),
+    url(r'^overlay/(?P<decade>[0-9]{4})/(?P<year>[0-9]{4})/(?P<month>[1-9]{1}|10|11|12)/(?P<day>\d\d?)/$', views.showContent),
 
 ]
