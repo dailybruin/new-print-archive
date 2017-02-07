@@ -80,14 +80,15 @@ $( document ).ready(function() {
     $(document).on("click",".final_date a", function() {
       console.log("clicked day" , $(this));
 
-      decade = $(this)[0].classList[0];
+      decade = $(this)[0].classList[0]
       year = $(this)[0].classList[1];
       month = $(this)[0].classList[2];
-      day = $(this)[0].innerText;
+      day = $(this)[0].classList[3];
 
       console.log("decade: ", decade, "month: ", month, "year: ", year, "day: ", day);
 
       date_url = "/overlay/" + decade + "/" + year + "/" + month + "/" + day;
+      console.log(date_url);
         $.ajax({
         url: date_url,
         success: function(data) {

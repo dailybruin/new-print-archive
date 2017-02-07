@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from django.db.models import F
-
+import datetime
 from .models import ArchivePage
 
 
@@ -68,7 +68,9 @@ def getDays(request, decade, year, month):
     return render(request, 'archive/overlaydays.html', {'decade':decade, 'year':year, 'month': month, 'days': days})
 
 def showContent(request, decade, year, month, day):
-
+    # MAIN CONTENT FUNCTION!!!!
+    # test_query = ArchivePage.objects.filter(pub__date = datetime(year, month, day) )
+    # print (test_query)
     return render(request, 'archive/maincontent.html', {'decade':decade, 'year':year, 'month': month, 'day': day})
 
 # Called when user clicks on a date
