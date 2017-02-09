@@ -4,7 +4,7 @@ import requests
 import json
 
 image_filename= 'C:/Users/Andrew/Documents/dailybruin/archive/page-004.pdf.header.jpg' # file name goes here
-api_key= 'AIzaSyD6kpyzItHfRlJNEmRTFRF5HDdCNXMYPhQ'                                     # API key goes here
+api_key= 'insert API key here'                                                         # API key goes here (my API key expired)
 
 def make_image_data_list(image_filenames):
     img_request = []
